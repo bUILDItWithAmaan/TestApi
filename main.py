@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, abort
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app, origins=["https://amaansapp.com"])
+CORS(app)
 api_key = "123456789"
 @app.route('/api/data')
 def get_data():
@@ -13,5 +13,5 @@ def get_data():
     }
     return jsonify(data)
 if __name__ == '__main__':
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=False)
         
